@@ -25,6 +25,10 @@ with tf.Session(graph=g2) as sess:
 		#在计算图g1中，变量“v“的取值应该为1，所以下面这行会输出[1.]
 		print(sess.run(tf.get_variable("b")))
 
+# 指定计算运行的设备
+# with g.device('/gpu:0'):
+# 	result = a + b
+
 
 ##报错记录
 #1、错误“_init_() got an unexpected keyword argument ‘shape’”
