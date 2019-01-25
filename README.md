@@ -16,6 +16,7 @@
 * 有效的整理tensorflow程序中的资源也是计算图的一个重要功能
 * tf.add_to_collection 函数可以将资源加入一个或多个集合中，然后通过tf.get_collection获取一个集合里面的所有资源
 * 这里的资源可以是张量、变量或者运行程序所需要的队列资源
+<<<<<<< Updated upstream
 
 ### 2、tensorflow数据模型--张量
 * 一个张量中主要保存三个属性：名字（name）、维度（shape）和类型（type）
@@ -27,3 +28,9 @@
 * tensorflow游乐场
 * 前向传播算法简介
 * 神经网络参数与tensorflow变量
+=======
+### 2、张量
+* 一个张量中主要保存三个属性：名字（name）、维度（shape）和类型（type）
+### 3、会话
+* 
+>>>>>>> Stashed changes
