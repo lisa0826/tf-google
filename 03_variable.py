@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*
 import tensorflow as tf 
 
 # 声明w1、w2两个变量。这里还通过seed参数设定了随机种子，这样可以保证每次运行得到的结果是一样的
