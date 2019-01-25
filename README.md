@@ -26,3 +26,4 @@
 ### 4、tensorflow实现神经网络
 * tensorflow游乐场
 * 前向传播算法简介
+* 神经网络参数与tensorflow变量
