@@ -14,7 +14,7 @@ print "Validating data size:",mnist.validation.num_examples
 print "Testing data size:",mnist.test.num_examples
 
 # 打印Example training data:
-print "Example training data:",mnist.train.images[0]
+print "Example training data:",mnist.train.images[1]
 
 # 打印Example training data label:
 print "Example training data label:",mnist.train.labels[0]
