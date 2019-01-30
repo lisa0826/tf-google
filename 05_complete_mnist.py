@@ -99,4 +99,16 @@ with tf.Session() as sess:
 		xs, ys = mnist.train.next_batch(BATCH_SIZE)
 		sess.run(train_op,feed_dict={x:xs,y_:ys})
 
-	
+	#在训练结束之后，在测试数据上检测神经网络模型的最终正确率
+	test_acc = sess.run(accuracy,feed_dict=test_feed)
+	print("After %d training step(s),test accuracy using average model is %g" % (TRAINING_STEPS,test_acc))
+
+#主程序入口
+def main(argv=None):
+	#声明处理MNIST数据集的类，这个类在初始化时会自动下载数据
+	mnist = input_data.read_data_sets("/tmp/data",one_hot=True)
+
+#TensorFlow提供的一个主程序入口，tf.app.run会调用上面定义的main函数
+if __name__ == '__main__':
+	tf.app.run()
+
