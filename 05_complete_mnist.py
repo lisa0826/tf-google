@@ -52,7 +52,7 @@ def train(mnist):
 	#在所有代表神经网络参数的变量上使用滑动平均，其他辅助变量（比如global_step）就不需要了。tf.trainable_variables返回的就是图上集合GraphKeys.TRAINABLE_VARIABLES中的元素。这个集合的元素就是所有没有指定trainable=False的参数
 	variables_averages_op = variable_averages.apply(tf.trainable_variables())
 
-	#计算使用了滑动平均之后的前向传播结果，第4章中介绍过滑动平均不会改变变量本身的取值，而是会维护一个影子变量来记录其滑动平均值。所以当需要使用这个滑动平均值时，需要明确调用average函数
+	#计算使用了滑动平均之后的前向传播结果，第4章中介绍过滑动平均不会改变变量本身的取值，而是会维护一个影子变量来记录其滑动平均值。所以当需要使用这个滑动平均值时，                                  需要明确调用average函数
 	average_y = inference(x, variable_averages,weights1, biases1, weights2,biases2)
 
 	#计算交叉熵作为刻画预测值和真实值之间差距的损失函数，这里使用了TensorFlow中提供的sparse_softmax_cross_entropy_with_logits函数来计算交叉熵。当分类问题只有一个正确答案时，可以使用这个函数来加速交叉熵的计算。MNIST问题的图片中只包含了0~9中的一个数字，所以可以使用这个函数来计算交叉熵损失。这个函数的第一个参数是神经网络不包括softmax层的前向传播结果，第二个是训练数据的正确答案。因为标准答案是一个长度为10的一维数组，而该函数需要提供的是一个正确答案的数字，所以需要使用tf.argmax函数来得到正确答案对应的类别编号。
@@ -107,7 +107,7 @@ def train(mnist):
 #主程序入口
 def main(argv=None):
 	#声明处理MNIST数据集的类，这个类在初始化时会自动下载数据
-	mnist = input_data.read_data_sets("mnist_data_google/",one_hot=True)
+	mnist = input_data.read_data_sets("complete_MNIST_data/",one_hot=True)
 
 #TensorFlow提供的一个主程序入口，tf.app.run会调用上面定义的main函数
 if __name__ == '__main__':
